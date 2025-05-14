@@ -7,7 +7,7 @@ const Home = () => {
 
   return (
     <div>
-      <MovieView movies={data?.results}  />
+      <MovieView movies={data?.results} />
     </div>
   );
 };
