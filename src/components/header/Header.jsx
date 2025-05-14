@@ -11,18 +11,19 @@ import { FaRegMoon } from "react-icons/fa";
 const Header = () => {
   const { pathname } = useLocation();
   const [theme, setTheme] = useState(true);
+  const [show, setShow] = useState(false);
 
   return (
-    <header className="h-20 bg-dark">
+    <header className="max-w-full h-20 bg-dark">
       <div className="container mx-auto">
         <div className="flex justify-between">
           <div className="py-[22px]">
             <NavLink to={"/"}>
-              <img src={logo__icon} alt="logo icon" />
+              <img className="w-full h-full" src={logo__icon} alt="logo icon" />
             </NavLink>
           </div>
 
-          <ul className="flex gap-10 py-4 ml-28 font-medium font-[Inter] text-[#A1A1A1]">
+          <ul className="lg:flex gap-10 py-4 ml-28 font-medium font-[Inter] text-[#A1A1A1] md:hidden hidden">
             <li>
               <NavLink
                 className={`flex flex-col items-center gap-1.5 ${
@@ -66,14 +67,33 @@ const Header = () => {
           </ul>
 
           <div className="flex items-center gap-5">
-            <div className="text-[#A1A1A1]">
-             {theme ? <MdOutlineLightMode onClick={()=> setTheme((prev)=> !prev )} className="text-3xl cursor-pointer" /> : <FaRegMoon className="text-3xl cursor-pointer" onClick={()=> setTheme((prev)=> !prev )} />}  
+            <div className="text-[#A1A1A1] md:flex-none hidden md:hidden lg:block transition">
+              {theme ? (
+                <MdOutlineLightMode
+                  onClick={() => setTheme((prev) => !prev)}
+                  className="text-3xl cursor-pointer"
+                />
+              ) : (
+                <FaRegMoon
+                  className="text-3xl cursor-pointer"
+                  onClick={() => setTheme((prev) => !prev)}
+                />
+              )}
             </div>
-            <a href="#">
-              <button className="w-[180px] h-[56px]  bg-primary rounded-[12px] cursor-pointer text-white">
+            <div
+              onClick={() => setShow(!show)}
+              className={`flex flex-col gap-1.5 lg:hidden md:flex md:gap-1.5 cursor-pointer p-2 transition ${
+                show ? `bg-red-900 rounded` : ""
+              }`}>
+              <div className="w-9 h-1.5 bg-primary rounded"></div>
+              <div className="w-9 h-1.5 bg-primary rounded"></div>
+              <div className="w-9 h-1.5 bg-primary rounded"></div>
+            </div>
+            <NavLink>
+              <button className="w-[180px] h-[56px] bg-primary rounded-[12px] cursor-pointer text-white">
                 SignUp
               </button>
-            </a>
+            </NavLink>
           </div>
         </div>
       </div>

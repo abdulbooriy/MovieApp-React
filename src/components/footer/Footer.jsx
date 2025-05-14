@@ -18,7 +18,7 @@ import youtube__icon from "@/assets/icons/youtube-line.svg";
 const Footer = () => {
   return (
     <div className="container mx-auto mt-[118px]">
-      <footer className="border w-[1180px] h-[240px] bg-[#1D1D1D] rounded-[12px] mb-10 grid grid-cols-4 ">
+      <footer className="max-w-[1180px] h-auto bg-[#1D1D1D] rounded-[12px] mb-10 grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 ">
         <div className="py-[30px] px-[30px]">
           <NavLink to={"/"}>
             <img src={footer__icon} alt="footer icon" />
@@ -62,7 +62,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        <div className="py-[30px] font-[Inter]">
+        <div className="py-[30px] font-[Inter] px-[30px]">
           <h1 className="font-medium text-white">Категории</h1>
 
           <ul className="flex flex-col pt-[18px] gap-[18px] text-footer_primary">
@@ -85,7 +85,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        <div className="py-[30px] font-[Inter]">
+        <div className="py-[30px] font-[Inter] md:px-[30px]">
           <h1 className="font-medium text-white">Связаться с нами</h1>
 
           <ul className="flex flex-col pt-[18px] gap-[18px] text-footer_primary">
