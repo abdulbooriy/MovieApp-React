@@ -6,10 +6,10 @@ const Card = ({ item }) => {
 
   const url = import.meta.env.VITE_IMAGE_URL;
   return (
-    <div className="mt-10 flex flex-col rounded-[12px] gap-3">
-      <div>
+    <div className="flex flex-col rounded-[12px] gap-3">
+      <div className="w-[280px]">
         <img
-          className="rounded-[12px] h-[420px]"
+          className="w-full h-[400px] rounded-[12px]"
           src={url + item.poster_path}
           alt="movie image"
           loading="lazy"

@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import logo__icon from "@/assets/icons/LOGOTYPE – BILETICK.svg";
-import { IoHomeOutline } from "react-icons/io5";
-import { MdOutlineMovie } from "react-icons/md";
-import { RiCoupon3Line } from "react-icons/ri";
-import { IoSearchSharp } from "react-icons/io5";
 import { NavLink, useLocation } from "react-router-dom";
-import { MdOutlineLightMode } from "react-icons/md";
-import { FaRegMoon } from "react-icons/fa";
+
+import { IoHomeOutline, IoSearchSharp } from "react-icons/io5";
+import { MdOutlineMovie, MdOutlineLightMode } from "react-icons/md";
+import { FaRegMoon, FaRegBookmark } from "react-icons/fa";
 
 const Header = () => {
   const { pathname } = useLocation();
@@ -14,7 +12,7 @@ const Header = () => {
   const [show, setShow] = useState(false);
 
   return (
-    <header className="max-w-full h-20 bg-dark">
+    <header className="max-w-full h-20 bg-black">
       <div className="container mx-auto">
         <div className="flex justify-between">
           <div className="py-[22px]">
@@ -50,7 +48,7 @@ const Header = () => {
                   pathname === "/saved" && "text-red-700"
                 }`}
                 to={"/saved"}>
-                <RiCoupon3Line className="text-2xl" />
+                <FaRegBookmark className="text-2xl" />
                 Saved
               </NavLink>
             </li>

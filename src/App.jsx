@@ -2,7 +2,7 @@ import MainRouters from "./pages";
 
 function App() {
   return (
-    <div>
+    <div className="bg-black">
       <MainRouters />
     </div>
   );

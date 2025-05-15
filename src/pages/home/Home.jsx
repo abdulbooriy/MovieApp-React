@@ -1,3 +1,4 @@
+import Hero from "@/components/hero/Hero";
 import MovieView from "@/components/movie-view/MovieView";
 import { useFetch } from "@/hooks/useFetch";
 import React from "react";
@@ -7,6 +8,7 @@ const Home = () => {
 
   return (
     <div>
+      <Hero />
       <MovieView movies={data?.results} />
     </div>
   );

@@ -4,7 +4,7 @@ import { useFetch } from "@/hooks/useFetch";
 import React, { useState } from "react";
 
 const Movies = () => {
-  const [genre, setGenre] = useState("")
+  const [genre, setGenre] = useState("");
   const { data, error, loading } = useFetch("/discover/movie", {
     page: 1,
     with_genres: genre,
@@ -13,7 +13,7 @@ const Movies = () => {
 
   return (
     <div>
-      <Genres setGenre={setGenre}/>
+      <Genres setGenre={setGenre} />
       <MovieView movies={data?.results} />
       {loading}
     </div>

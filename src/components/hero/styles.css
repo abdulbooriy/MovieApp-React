@@ -1,0 +1,7 @@
+.mySwiper .swiper-slide {
+  opacity: 0.2;
+}
+
+.mySwiper .swiper-slide-thumb-active {
+  opacity: 1;
+}
