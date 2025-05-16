@@ -7,35 +7,12 @@ import "swiper/css/navigation";
 import "./styles.css";
 
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
-
-import panda__image from "@/assets/images/panda__image.png";
-import soldiers__image from "@/assets/images/soldiers__image.webp";
-import minecraft__image from "@/assets/images/minecraft__image.webp";
-import tin__soldiers__image from "@/assets/images/tin_soldiers__image.webp";
-import last__bullet__image from "@/assets/images/last__bullet__image.webp";
-import snow__white__image from "@/assets/images/snow__white__image.webp";
-import avengers__image from "@/assets/images/avengers__image.webp";
-import exterritorial__image from "@/assets/images/exterritorial__image.webp";
-import rust__image from "@/assets/images/rust__image.webp";
-import moana__image from "@/assets/images/moana__image.webp";
-
 import { FaAngleRight, FaAngleLeft } from "react-icons/fa";
+import { RiPlayLargeFill } from "react-icons/ri";
 
-const Hero = () => {
+const Hero = ({ movies }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
-
-  const heroImages = [
-    { src: panda__image, alt: "first hero image" },
-    { src: soldiers__image, alt: "second hero image" },
-    { src: minecraft__image, alt: "third hero image" },
-    { src: tin__soldiers__image, alt: "fourth hero image" },
-    { src: last__bullet__image, alt: "fifth hero image" },
-    { src: snow__white__image, alt: "sixth hero image" },
-    { src: avengers__image, alt: "seventh hero image" },
-    { src: exterritorial__image, alt: "eighth hero image" },
-    { src: rust__image, alt: "ninth hero image" },
-    { src: moana__image, alt: "tenth hero image" },
-  ];
+  const url = import.meta.env.VITE_IMAGE_URL;
 
   return (
     <>
@@ -47,10 +24,27 @@ const Hero = () => {
         }}
         thumbs={{ swiper: thumbsSwiper }}
         modules={[FreeMode, Navigation, Thumbs]}
-        className="w-[1360px] h-[640px] rounded-[12px] mx-auto">
-        {heroImages.map((img, index) => (
-          <SwiperSlide key={index}>
-            <img src={img.src} alt={img.alt} />
+        className="w-[1360px] h-[640px] rounded-[12px] mx-auto relative">
+        {movies?.map((item) => (
+          <SwiperSlide key={item.id}>
+            <img
+              src={url + item?.backdrop_path}
+              alt={item?.original_title}
+              className="hover:scale-120 duration-200"
+            />
+            <div className="w-[1200px] absolute bottom-6 left-1/2 -translate-x-1/2 text-white font-[Inter] flex flex-col items-center gap-4">
+              <h3 className="text-[32px] font-medium">{item.original_title}</h3>
+              <ul className="flex gap-8 list-disc">
+                <span>{item.release_date}</span>
+                <li>1ч 34м</li>
+                <li>EN</li>
+                <li>6+</li>
+              </ul>
+              <button className="w-[380px] h-[52px] bg-[#fff] rounded-[12px] flex justify-center items-center gap-2 cursor-pointer">
+                <RiPlayLargeFill className="text-[#C61F1F] text-2xl" />
+                <span className="text-[#C61F1F] font-semibold">Смотреть</span>
+              </button>
+            </div>
           </SwiperSlide>
         ))}
       </Swiper>
@@ -62,18 +56,18 @@ const Hero = () => {
 
         <Swiper
           onSwiper={setThumbsSwiper}
-          spaceBetween={10}
+          spaceBetween={20}
           slidesPerView={4}
           freeMode={true}
           watchSlidesProgress={true}
           modules={[FreeMode, Navigation, Thumbs]}
-          className="mySwiper w-[850px] rounded-[12px]">
-          {heroImages.map((img, idx) => (
-            <SwiperSlide key={idx}>
+          className="mySwiper w-full h-[250px] rounded-[12px]">
+          {movies?.map((item) => (
+            <SwiperSlide key={item.id}>
               <img
-                className="rounded-[12px] h-[127px]"
-                src={img.src}
-                alt={img.alt}
+                src={url + item?.poster_path}
+                alt={item?.original_title}
+                className="rounded-[12px] w-full h-full object-cover hover:scale-105 transition"
               />
             </SwiperSlide>
           ))}

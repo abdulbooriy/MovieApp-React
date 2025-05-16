@@ -90,7 +90,7 @@ const Header = () => {
             </div>
 
             <NavLink>
-              <button className="w-[180px] h-[56px] bg-primary rounded-[12px] cursor-pointer text-white">
+              <button className="w-[180px] h-[56px] bg-primary rounded-[12px] md:hidden lg:flex lg:justify-center lg:items-center hidden cursor-pointer text-white">
                 SignUp
               </button>
             </NavLink>

@@ -1,5 +1,6 @@
 import Hero from "@/components/hero/Hero";
 import MovieView from "@/components/movie-view/MovieView";
+import Skeleton from "@/components/skeleton/Skeleton";
 import { useFetch } from "@/hooks/useFetch";
 import React from "react";
 
@@ -8,8 +9,9 @@ const Home = () => {
 
   return (
     <div>
-      <Hero />
-      <MovieView movies={data?.results} />
+      <Hero movies={data?.results.slice(10)} />
+      <MovieView movies={data?.results.slice(10)} />
+      {loading && <Skeleton count={20}/>}
     </div>
   );
 };

@@ -18,7 +18,7 @@ const Card = ({ item }) => {
       </div>
       <div>
         <h3 className="text-2xl font-semibold font-[Inter] line-clamp-1">
-          {item?.title}
+          {item?.original_title}
         </h3>
       </div>
     </div>
