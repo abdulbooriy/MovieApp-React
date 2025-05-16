@@ -40,7 +40,7 @@ const Footer = () => {
         </div>
 
         <div className="py-[30px] font-[Inter]">
-          <h1 className="font-medium text-white">О нас</h1>
+          <h3 className="font-medium text-white">О нас</h3>
 
           <ul className="flex flex-col pt-[18px] gap-[18px] text-footer_primary">
             <li className="flex gap-2.5">
@@ -63,7 +63,7 @@ const Footer = () => {
         </div>
 
         <div className="py-[30px] font-[Inter] px-[30px]">
-          <h1 className="font-medium text-white">Категории</h1>
+          <h3 className="font-medium text-white">Категории</h3>
 
           <ul className="flex flex-col pt-[18px] gap-[18px] text-footer_primary">
             <li className="flex gap-2.5">
@@ -86,7 +86,7 @@ const Footer = () => {
         </div>
 
         <div className="py-[30px] font-[Inter] md:px-[30px]">
-          <h1 className="font-medium text-white">Связаться с нами</h1>
+          <h3 className="font-medium text-white">Связаться с нами</h3>
 
           <ul className="flex flex-col pt-[18px] gap-[18px] text-footer_primary">
             <li className="flex gap-2.5">

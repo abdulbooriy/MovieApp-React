@@ -9,7 +9,7 @@ const MovieView = ({ movies }) => {
   return (
     <div className="container mx-auto">
       <div className="mt-[118px] text-white">
-        <div className="flex justify-between mb-10">
+        <div className="flex justify-between mb-5 font-[Inter]">
           <span>In the week</span>
           <NavLink
             className={`flex items-center gap-2 text-red-700 ${
