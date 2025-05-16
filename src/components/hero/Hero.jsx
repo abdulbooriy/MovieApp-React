@@ -56,7 +56,7 @@ const Hero = () => {
       </Swiper>
 
       <div className="flex justify-between items-center w-[100%] max-w-[950px] mx-auto mt-4 gap-3">
-        <button className="custom-prev w-[50px] h-[50px] bg-[#1D1D1D] rounded-full text-[#C61F1F] flex justify-center items-center text-3xl">
+        <button className="custom-prev w-[50px] h-[50px] bg-[#1D1D1D] rounded-full text-[#C61F1F] flex justify-center items-center text-3xl cursor-pointer">
           <FaAngleLeft />
         </button>
 
@@ -79,7 +79,7 @@ const Hero = () => {
           ))}
         </Swiper>
 
-        <button className="custom-next w-[50px] h-[50px] bg-[#1D1D1D] rounded-full text-[#C61F1F] flex justify-center items-center text-3xl">
+        <button className="custom-next w-[50px] h-[50px] bg-[#1D1D1D] rounded-full text-[#C61F1F] flex justify-center items-center text-3xl cursor-pointer">
           <FaAngleRight />
         </button>
       </div>

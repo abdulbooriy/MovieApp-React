@@ -17,8 +17,8 @@ import youtube__icon from "@/assets/icons/youtube-line.svg";
 
 const Footer = () => {
   return (
-    <div className="container mx-auto mt-[118px]">
-      <footer className="max-w-[1180px] h-auto bg-[#1D1D1D] rounded-[12px]  grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 ">
+    <div className="container mx-auto mt-[100px] pb-10">
+      <footer className="max-w-[1180px] h-auto bg-[#1D1D1D] rounded-[12px] grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2">
         <div className="py-[30px] px-[30px]">
           <NavLink to={"/"}>
             <img src={footer__icon} alt="footer icon" />

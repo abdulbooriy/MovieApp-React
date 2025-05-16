@@ -6,14 +6,14 @@ const Genres = ({ setGenre }) => {
   console.log(data?.genres);
 
   return (
-    <div className="container mx-auto py-4">
-      <div className="flex overflow-auto gap-5">
+    <div className="container mx-auto">
+      <div className="flex w-full overflow-auto scrollbar-hidden gap-5 mt-12">
         {data?.genres?.map((genre) => (
           <div
             key={genre.id}
-            className="text-nowrap"
+            className="flex min-w-[136px] h-[48px] text-nowrap bg-[#1D1D1D] rounded-[12px] items-center justify-center text-white"
             onClick={() => setGenre(genre.id.toString())}>
-            {genre?.name}
+            <span>{genre?.name}</span>
           </div>
         ))}
       </div>
