@@ -1,4 +1,5 @@
 import React from "react";
+
 import footer__icon from "@/assets/icons/footer__icon.svg";
 import goole__play__icon from "@/assets/icons/google__play__icon.svg";
 import app__store__icon from "@/assets/icons/app__store__icon.svg";
@@ -68,7 +69,7 @@ const Footer = () => {
           <ul className="flex flex-col pt-[18px] gap-[18px] text-footer_primary">
             <li className="flex gap-2.5">
               <img src={movie__icon} alt="movie icon" />
-              <NavLink>Кино</NavLink>
+              <NavLink to={"/movies"}>Кино</NavLink>
             </li>
             <li className="flex gap-2.5">
               <img src={theater__icon} alt="theater icon" />

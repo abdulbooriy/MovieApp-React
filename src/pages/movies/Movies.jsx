@@ -7,17 +7,18 @@ import { useSearchParams } from "react-router-dom";
 import { Pagination, PaginationItem } from "@mui/material";
 
 const Movies = () => {
-  const [genre, setGenre] = useState("");
   const [params, setParams] = useSearchParams();
   const page = params.get("page") || 1;
   let genres = params.get("genres") || "";
   let with_genres = genres.split("-").join(",").slice(1);
 
-  const { data, error, loading } = useFetch("/discover/movie", {
+  const { data, _, loading } = useFetch("/discover/movie", {
     page,
     with_genres,
     without_genres: "18,10749,36",
   });
+
+  window.scroll(0, 0);
 
   const handleChangeGenre = useCallback((id) => {
     let array = genres.split("-");

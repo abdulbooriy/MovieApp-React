@@ -1,59 +1,46 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import Card from "./Card";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
 import { FaAngleRight, FaAngleLeft } from "react-icons/fa";
 
 import "swiper/css";
-import "swiper/css/zoom";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import { Navigation, Pagination } from "swiper/modules";
-
 const MovieView = ({ movies }) => {
-  const url = import.meta.env.VITE_IMAGE_URL;
-
   return (
-    <div className="flex w-[1308px] mx-auto justify-between items-center">
-      <button className="curd-custom-prev w-[50px] h-[50px] bg-[#1D1D1D] mr-4 rounded-full text-[#C61F1F] flex justify-center items-center text-3xl cursor-pointer">
-        <FaAngleLeft />
-      </button>
+    <div className="container mx-auto mt-5 relative">
+      <div className="absolute left-[-60px] top-1/2 -translate-y-1/2 z-10">
+        <div className="swiper-button-prev-custom w-[50px] h-[50px] bg-[#1D1D1D] rounded-full text-[#C61F1F] flex justify-center items-center text-3xl cursor-pointer">
+          <FaAngleLeft />
+        </div>
+      </div>
+      <div className="absolute right-[-60px] top-1/2 -translate-y-1/2 z-10">
+        <div className="swiper-button-next-custom w-[50px] h-[50px] bg-[#1D1D1D] rounded-full text-[#C61F1F] flex justify-center items-center text-3xl cursor-pointer">
+          <FaAngleRight />
+        </div>
+      </div>
 
       <Swiper
-        spaceBetween={10}
-        slidesPerView={4}
+        spaceBetween={20}
+        slidesPerView="auto"
+        keyboard={{ enabled: true }}
         navigation={{
-          nextEl: ".curd-custom-next",
-          prevEl: ".curd-custom-prev",
+          nextEl: ".swiper-button-next-custom",
+          prevEl: ".swiper-button-prev-custom",
         }}
         modules={[Navigation, Pagination]}
-        className="container mx-auto mt-[50px] text-white relative">
-        <div className="absolute top-0 container mx-auto flex justify-between">
-          <h3>In the week</h3>
-          <NavLink to={"/movies"}>
-            <span className="cursor-pointer text-red-800">Show all</span>
-          </NavLink>
-        </div>
+        style={{
+          "--swiper-navigation-size": "0px",
+        }}
+        className="movie-swiper">
         {movies?.map((item) => (
-          <SwiperSlide key={item.id} className="py-4">
-            <div className="w-[280px] my-5  rounded-[12px] flex flex-col gap-3 overflow-hidden">
-              <img
-                src={url + item.poster_path}
-                className="w-full h-[400px] rounded-[12px] hover:scale-120 transition-all duration-300 cursor-pointer"
-              />
-            </div>
-            <div>
-              <h3 className="line-clamp-1 text-2xl font-[Inter] font-medium">
-                {item?.original_title}
-              </h3>
-            </div>
+          <SwiperSlide key={item.id} style={{ width: "280px" }}>
+            <Card item={item} />
           </SwiperSlide>
         ))}
       </Swiper>
-
-      <button className="curd-custom-next w-[50px] h-[50px] bg-[#1D1D1D] rounded-full text-[#C61F1F] flex justify-center items-center text-3xl cursor-pointer">
-        <FaAngleRight />
-      </button>
     </div>
   );
 };
