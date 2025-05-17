@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FaAngleRight, FaAngleLeft } from "react-icons/fa";
 
@@ -11,7 +11,6 @@ import "swiper/css/pagination";
 import { Navigation, Pagination } from "swiper/modules";
 
 const MovieView = ({ movies }) => {
-
   const url = import.meta.env.VITE_IMAGE_URL;
 
   return (
@@ -28,9 +27,15 @@ const MovieView = ({ movies }) => {
           prevEl: ".curd-custom-prev",
         }}
         modules={[Navigation, Pagination]}
-        className="container mx-auto mt-[118px] text-white">
+        className="container mx-auto mt-[50px] text-white relative">
+        <div className="absolute top-0 container mx-auto flex justify-between">
+          <h3>In the week</h3>
+          <NavLink to={"/movies"}>
+            <span className="cursor-pointer text-red-800">Show all</span>
+          </NavLink>
+        </div>
         {movies?.map((item) => (
-          <SwiperSlide key={item.id}>
+          <SwiperSlide key={item.id} className="py-4">
             <div className="w-[280px] my-5  rounded-[12px] flex flex-col gap-3 overflow-hidden">
               <img
                 src={url + item.poster_path}
@@ -52,12 +57,5 @@ const MovieView = ({ movies }) => {
     </div>
   );
 };
-
-{
-  /* <div>
-  <h3>In the week</h3>
-  <NavLink to={"/movies"}>Show all</NavLink>
-</div>; */
-}
 
 export default React.memo(MovieView);
