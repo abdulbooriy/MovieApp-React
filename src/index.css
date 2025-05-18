@@ -7,6 +7,10 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+body {
+  background: black;
+}
+
 @theme {
   --color-primary: #c61f1f;
   --color-dark: #1e1e1e;

@@ -59,12 +59,25 @@ const Movies = () => {
 
       <div className="container mx-auto flex justify-center mt-[50px]">
         <Pagination
-          className="flex justify-center items-center gap-2 bg-white rounded-2xl"
           count={data?.total_pages > 500 ? 500 : data?.total_pages}
           size="large"
           onChange={handleChange}
           page={Number(page)}
-          color="primary"
+          sx={{
+            "& .MuiPagination-ul": { color: "white" },
+            "& .Mui-selected": {
+              backgroundColor: "red",
+              color: "white",
+            },
+            "& button": {
+              color: "white",
+              borderColor: "white",
+              fontSize: "18px",
+            },
+            "& .MuiPaginationItem-ellipsis": {
+              color: "white",
+            },
+          }}
         />
       </div>
     </div>

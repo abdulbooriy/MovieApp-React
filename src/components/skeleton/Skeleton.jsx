@@ -8,6 +8,7 @@ const Skeleton = ({ count }) => {
         .map((_, index) => (
           <div key={index}>
             <div className="w-full h-[400px] bg-[#15191e] rounded-[10px]"></div>
+            <div className="w-11/12 h-7 bg-[#15191e] my-3 rounded-[10px]"></div>
             <div className="w-10/12 h-7 bg-[#15191e] my-3 rounded-[10px]"></div>
           </div>
         ))}
