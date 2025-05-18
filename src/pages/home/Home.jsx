@@ -9,9 +9,12 @@ const Home = () => {
 
   return (
     <div>
-      <Hero movies={data?.results.slice(10)} />
+      <Hero movies={data?.results} />
       <MovieView movies={data?.results.slice(10)} />
-      {loading && <Skeleton count={20}/>}
+      {loading && <Skeleton count={4}/>}
+      {/* {Array.from({length:4}).map((item) => (
+
+      ))} */}
     </div>
   );
 };

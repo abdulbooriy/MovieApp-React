@@ -55,9 +55,9 @@ const SingleMovie = () => {
         </div>
         <div>
           <h3 className="container mx-auto text-3xl font-bold text-red-700 pt-10 text-center">
-            <span>--------------------------  Similar  --------------------------</span>
+            <span>Similar</span>
           </h3>
-          <MovieView movies={similars?.results?.slice(0, 4)} />
+          <MovieView movies={similars?.results} />
         </div>
       </div>
     </div>

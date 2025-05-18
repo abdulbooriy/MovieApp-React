@@ -7,9 +7,10 @@ import { FaAngleRight, FaAngleLeft } from "react-icons/fa";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { NavLink } from "react-router-dom";
+import { Navigate, NavLink } from "react-router-dom";
 
-const MovieView = ({ movies }) => {
+const MovieView = ({ movies, loading }) => {
+  
   return (
     <div className="container mx-auto mt-5 relative">
       <div className="absolute left-[-60px] top-1/2 -translate-y-1/2 z-10">
@@ -35,13 +36,14 @@ const MovieView = ({ movies }) => {
         style={{
           "--swiper-navigation-size": "0px",
         }}
-        className="movie-swiper mt-10">
+        className="movie-swiper mt-10 !z-10">
         <div className="text-white flex w-full items-center text-[20px] font-medium font-[Inter] absolute top-0 justify-between ">
           <strong>In the week</strong>
           <div className="flex items-center gap-1 text-red-600">
             <NavLink to={"/movies"}>
-              <span>Show All</span>
+              <span className="z-20 relative">Show All</span>
             </NavLink>
+            
             <FaAngleRight />
           </div>
         </div>

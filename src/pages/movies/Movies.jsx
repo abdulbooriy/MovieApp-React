@@ -1,10 +1,10 @@
 import Genres from "@/components/genres/Genres";
 import MovieView from "@/components/movie-view/MovieView";
 import { useFetch } from "@/hooks/useFetch";
-import React, { useCallback, useState } from "react";
+import React, { useCallback } from "react";
 import Skeleton from "@/components/skeleton/Skeleton";
 import { useSearchParams } from "react-router-dom";
-import { Pagination, PaginationItem } from "@mui/material";
+import { Pagination } from "@mui/material";
 
 const Movies = () => {
   const [params, setParams] = useSearchParams();
@@ -51,11 +51,7 @@ const Movies = () => {
     <div>
       <Genres handleChangeGenre={handleChangeGenre} genres={genres} />
       <MovieView movies={data?.results} />
-      {loading ? (
-        <Skeleton coount={20} />
-      ) : (
-        <MovieView movies={data?.results} />
-      )}
+      {loading && <Skeleton count={4} />}
 
       <div className="container mx-auto flex justify-center mt-[50px]">
         <Pagination
