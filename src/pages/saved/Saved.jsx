@@ -1,8 +1,7 @@
 import MovieView from "@/components/movie-view/MovieView";
 import { useStateValue } from "@/context";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import not_found_image from "@/assets/images/nodata-Photoroom.png";
-import Skeleton from "@/components/skeleton/Skeleton";
 
 const Saved = () => {
   const [state] = useStateValue();
@@ -18,7 +17,7 @@ const Saved = () => {
           />
         </div>
       ) : (
-          <MovieView movies={state.saved} />
+        <MovieView movies={state.saved} />
       )}
     </div>
   );

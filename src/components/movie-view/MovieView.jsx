@@ -7,10 +7,9 @@ import { FaAngleRight, FaAngleLeft } from "react-icons/fa";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Navigate, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
-const MovieView = ({ movies, loading }) => {
-  
+const MovieView = ({ movies }) => {
   return (
     <div className="container mx-auto mt-5 relative">
       <div className="absolute left-[-60px] top-1/2 -translate-y-1/2 z-10">
@@ -43,7 +42,7 @@ const MovieView = ({ movies, loading }) => {
             <NavLink to={"/movies"}>
               <span className="z-20 relative">Show All</span>
             </NavLink>
-            
+
             <FaAngleRight />
           </div>
         </div>

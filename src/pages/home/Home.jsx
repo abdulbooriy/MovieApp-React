@@ -11,10 +11,7 @@ const Home = () => {
     <div>
       <Hero movies={data?.results} />
       <MovieView movies={data?.results.slice(10)} />
-      {loading && <Skeleton count={4}/>}
-      {/* {Array.from({length:4}).map((item) => (
-
-      ))} */}
+      {loading && <Skeleton count={4} />}
     </div>
   );
 };
